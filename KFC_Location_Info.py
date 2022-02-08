@@ -14,6 +14,10 @@ param = {
     "op": "keyword"
 }
 
+headers = {
+    "User-Agent": "Mozilla / 5.0(Macintosh; Intel Mac OS X 10_15_7) AppleWebKit / 537.36(KHTML, like Gecko) Chrome / 97.0.4692.99 Safari / 537.36"
+}
+
 lst = []
 # fp = open("./KFC.json", mode="a", encoding="utf-8")
 # fp.write("{")
@@ -29,7 +33,7 @@ for i in range(1, 20):
                 "pageSize": "10"
         }
         # print(data)
-        resp = requests.post(url, params=param, data=data)
+        resp = requests.post(url, params=param, data=data, headers=headers)
 
         tex = resp.text
         # print(tex)
